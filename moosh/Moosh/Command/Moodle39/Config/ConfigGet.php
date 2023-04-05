@@ -42,29 +42,27 @@ class ConfigGet extends MooshCommand
 
         if ($plugin == 'cex') {
             $file = fopen("./config/core.yml", "w");
-            fwrite($file, (Yaml::dump((Array)get_config('core',$name))));
+            fwrite($file, (Yaml::dump((array)get_config('core', $name))));
             fclose($file);
-
             $manager = \core_plugin_manager::instance();
             $plugins = $manager->get_plugin_types();
             asort($plugins);
             $cutcharacters = strlen($CFG->dirroot);
             print_r($cutcharacters);
-
             foreach ($plugins as $type => $directory) {
                 $pluginsinside = array();
                 $finder = new Finder();
-                $iterator = $finder
-                        ->directories()
-                        ->depth(0)
-                        ->in($directory);
-                foreach ($iterator as $dir) {                 
+                $iterator = $finder->directories()->depth(0)->in($directory);
+                foreach ($iterator as $dir) {
                     $filename = $type . '_' . $dir->getBasename();
-                    $file = fopen("./config/" . $filename. ".yml", "w");
-                    fwrite($file, (Yaml::dump((Array)get_config($filename,$name))));
-                    fclose($file);
+                    $config_array = (array)get_config($filename, $name);
+                    if (!(array_key_exists('version', $config_array) && count($config_array) == 1 || count($config_array) == 0)) {
+                        $file = fopen("./config/" . $filename . ".yml", "w");
+                        fwrite($file, (Yaml::dump((array)get_config($filename, $name))));
+                        fclose($file);
+                    }
                 }
-            } 
+            }
             echo "\n";
         }
 
