@@ -1,0 +1,7 @@
+host: ''
+password: ''
+port: '0'
+secure: '0'
+username: default
+useserver: '0'
+version: '2022112800'

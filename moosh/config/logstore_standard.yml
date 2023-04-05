@@ -1,0 +1,5 @@
+buffersize: '50'
+jsonformat: '1'
+logguests: '1'
+loglifetime: '0'
+version: '2022112800'

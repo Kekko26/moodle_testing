@@ -1,0 +1,7 @@
+audiocssclass: video-js
+audioextensions: html_audio
+limitsize: '1'
+version: '2022112800'
+videocssclass: video-js
+videoextensions: 'html_video,media_source,.f4v,.flv'
+youtube: '1'

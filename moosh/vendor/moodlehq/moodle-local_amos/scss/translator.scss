@@ -1,0 +1,103 @@
+// Strings translator.
+#page-local-amos-view #amostranslator {
+
+    opacity: 1;
+    transition: opacity 0.2s;
+
+    &.loading {
+        opacity: 0;
+    }
+
+	.amostranslatoritem {
+
+		// Undo right margin on help icons.
+		.amosinfo .icon {
+			margin-right: 0;
+		}
+
+		.amosinfo {
+			margin-bottom: 0.25rem;
+		}
+
+        .amosoriginal,
+        .amostranslation {
+			flex: 1 1 auto;
+			min-height: 3rem;
+        }
+
+        .amosoriginal,
+        .amostranslation,
+        .amostranslationedit textarea {
+			border: 1px solid rgb(204,204,204);
+			border-radius: 4px;
+        }
+
+        .amosoriginal,
+        .amostranslationview {
+            padding: 10px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .amostranslationedit {
+            padding: 4px;
+        }
+
+        .amostranslationedit textarea {
+            padding: 5px;
+        };
+
+		.amostranslationview {
+			cursor: text;
+		}
+
+        .amostranslationview,
+        .amostranslationedit,
+        .amostranslationedit textarea {
+            height: 100%;
+            width: 100%;
+        }
+
+		&.translatable .amostranslation {
+			background-color: $amos-color-translatable;
+		}
+
+        &.translatable.missing .amostranslation {
+            background-color: $amos-color-missing;
+        }
+
+        &.translatable.outdated .amostranslation {
+            background-color: $amos-color-outdated;
+        }
+
+        &.translatable.staged .amostranslation {
+            background-color: $amos-color-staged !important;
+        }
+
+        &.translatable.outdated .amostranslation {
+            background-color: $amos-color-outdated;
+        }
+
+        &.nontranslatable .amostranslation {
+            background-color: $amos-color-nontranslatable;
+            font-style: italic;
+            color: #545454;
+        }
+
+        &[data-mode="view"] .amostranslationedit {
+            display: none !important;
+        }
+
+        &[data-mode="edit"] .amostranslationview {
+            display: none !important;
+        }
+	}
+
+    .amospaginator {
+        .paginatoritem.current {
+            font-weight: bold;
+            background-color: #eee;
+        }
+    }
+}
+

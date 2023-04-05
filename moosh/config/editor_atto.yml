@@ -1,0 +1,3 @@
+autosavefrequency: '60'
+toolbar: "collapse = collapse\nstyle1 = title, bold, italic\nlist = unorderedlist, orderedlist, indent\nlinks = link\nfiles = emojipicker, image, media, recordrtc, managefiles, h5p\naccessibility = accessibilitychecker, accessibilityhelper\nstyle2 = underline, strike, subscript, superscript\nalign = align\ninsert = equation, charmap, table, clear\nundo = undo\nother = html"
+version: '2022112800'

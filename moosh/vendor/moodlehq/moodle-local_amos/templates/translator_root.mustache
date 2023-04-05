@@ -1,0 +1,107 @@
+{{!
+    This file is part of Moodle - https://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template local_amos/translator_root
+
+    Render the content of the AMOS translator.
+
+    Context variables required for this template:
+    * paginator
+    * strings
+    * found
+    * missing
+    * missingcurrentpage
+
+    Example context (json):
+    {
+        "paginator": {
+            "hasmultiplepages": false
+        },
+        "found": 1,
+        "missing": 0,
+        "missingcurrentpage": 0,
+        "strings": [
+            {
+                "translatable": true,
+                "outdated": true,
+                "component": "moodle",
+                "stringid": "course",
+                "originalid": 3005,
+                "translationid": "",
+                "nocleaning": false,
+                "displayenglishsince": "2.0+",
+                "islatestoriginal": true,
+                "stringid": "course",
+                "displaycomponent": "core",
+                "isappstring": true,
+                "isworkplacestring": true,
+                "displayoriginal": "Course",
+                "hastranslationsincelabel": true,
+                "displaytranslationsince": "2.0+",
+                "displaylanguage": "Czech [cs]",
+                "committable": true,
+                "islatesttranslation": true,
+                "hasuntranslateurl": true,
+                "untranslateurl": "",
+                "timelineurl": "",
+                "displaytranslation": "Kurz"
+            }
+        ]
+    }
+}}
+
+<div class="mt-4 mb-3">
+    <div class="row">
+        <div class="col-md">
+            <ul class="list-inline">
+                <li class="list-inline-item">{{#str}} foundtotal, local_amos, <span class="badge badge-info">{{found}}</span> {{/str}}</li>
+                <li class="list-inline-item">{{#str}} foundmissing, local_amos, <span class="badge badge-light">{{missing}}</span> {{/str}}</li>
+                <li class="list-inline-item">{{#str}} foundmissingonthispage, local_amos, <span class="badge badge-light">{{missingcurrentpage}}</span> {{/str}}</li>
+                <li class="list-inline-item"><i class="fa fa-link" aria-hidden="true"></i> <a href="{{permalink}}">{{#str}} permalink, local_amos {{/str}}</a></li>
+                <li class="list-inline-item"><i class="fa fa-arrow-right" aria-hidden="true"></i> <a href="/local/amos/stage.php">{{#str}} stagetoolopen, local_amos{{/str}}</a></li>
+            </ul>
+        </div>
+        <div class="col-md text-md-right">
+            {{#paginator}}
+                {{>local_amos/translator_paginator}}
+            {{/paginator}}
+        </div>
+    </div>
+</div>
+
+{{#strings}}
+    {{>local_amos/translator_string}}
+{{/strings}}
+
+<div class="my-3">
+    <div class="row">
+        <div class="col-md">
+            <ul class="list-inline">
+                {{#found}}
+                    <li class="list-inline-item"><i class="fa fa-arrow-up" aria-hidden="true"></i> <a href="#amosfilter">{{#str}} up {{/str}}</a></li>
+                    <li class="list-inline-item"><i class="fa fa-arrow-right" aria-hidden="true"></i> <a href="/local/amos/stage.php">{{#str}} stagetoolopen, local_amos{{/str}}</a></li>
+                {{/found}}
+            </ul>
+        </div>
+        <div class="col-md text-md-right">
+            {{#paginator}}
+                {{>local_amos/translator_paginator}}
+            {{/paginator}}
+        </div>
+    </div>
+</div>
+

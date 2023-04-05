@@ -1,0 +1,7 @@
+autoreconfigureseb: '1'
+displayblocksbeforestart: '0'
+displayblockswhenfinished: '1'
+downloadlink: 'https://safeexambrowser.org/download_en.html'
+quizpasswordrequired: '0'
+showseblinks: 'seb,http'
+version: '2022112800'

@@ -1,0 +1,14 @@
+#!/bin/bash -e
+
+# Make ZIP language packages
+# Generates ZIP packages and MD5 file for the download server at moodledata/amos/export-zip/
+# 0 * * * *
+# downstream: zip-packs-publish
+
+NOW=$(date +%s)
+
+php $AMOSCLIROOT/export-zip.php --minver=400 && \
+    php $AMOSCLIROOT/export-zip.php --minver=35 --maxver=311 && \
+    php $AMOSCLIROOT/export-zip.php --minver=27 --maxver=34 && \
+    php $AMOSCLIROOT/export-zip.php --maxver=26 && \
+    php $AMOSCLIROOT/../../../admin/cli/cfg.php  --component=local_amos --name=lastexportzip --set=${NOW}

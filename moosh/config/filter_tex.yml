@@ -1,0 +1,10 @@
+convertformat: gif
+density: '120'
+latexbackground: '#FFFFFF'
+latexpreamble: "\\usepackage[latin1]{inputenc}\n\\usepackage{amsmath}\n\\usepackage{amsfonts}\n\\RequirePackage{amsmath,amssymb,latexsym}\n"
+pathconvert: 'c:\imagemagick\convert.exe'
+pathdvips: 'c:\texmf\miktex\bin\dvips.exe'
+pathdvisvgm: 'c:\texmf\miktex\bin\dvisvgm.exe'
+pathlatex: 'c:\texmf\miktex\bin\latex.exe'
+pathmimetex: ''
+version: '2022112800'

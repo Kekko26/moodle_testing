@@ -1,0 +1,25 @@
+// Strings filter at the translator page.
+#page-local-amos-view #amosfilter {
+
+    // Default help texts are designed to be shown below the field. We display them below labels - fix the spacing.
+    label + .form-text {
+        margin-top: 0;
+        margin-bottom: 0.25rem;
+    }
+
+    // Make component and language selectors resizable vertically.
+    #amosfilter_fcmp,
+    #amosfilter_flng {
+        resize: vertical;
+    }
+
+    // Once a component is selected, highlight it in bold.
+    #amosfilter_fcmp input[type=checkbox]:checked + label {
+        font-weight: bold;
+    }
+
+    // Hide advanced settings in basic mode, unless they are forced to be shown.
+    &[data-level-showadvanced="0"] [data-level="advanced"]:not([data-level-forceshow]) {
+        display: none;
+    }
+}

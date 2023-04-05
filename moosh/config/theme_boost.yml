@@ -1,0 +1,9 @@
+backgroundimage: ''
+brandcolor: ''
+loginbackgroundimage: ''
+preset: default.scss
+presetfiles: ''
+scss: ''
+scsspre: ''
+unaddableblocks: 'navigation,settings,course_list,section_links'
+version: '2022112800'

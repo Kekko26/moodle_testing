@@ -1,0 +1,75 @@
+{{!
+    This file is part of Moodle - https://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template local_amos/timeline
+
+    Render the string translation timeline.
+
+    Context variables required for this template:
+    * changes
+
+    Example context (json):
+    {
+        "changes": [
+            {
+                "translation": {
+                    "hascontent": true,
+                    "displaysince": "2.0+",
+                    "langcode": "cs",
+                    "displaydate": "2006-05-03 16:26 UTC",
+                    "userinfo": "David Mudrak <david.mudrak@gmail.com>",
+                    "commitmsg": "David's first translations of 1.6 files.",
+                    "commitsource": "amos",
+                    "hascommithash": false,
+                    "displaytext": "Kurz"
+                }
+            },
+            {
+                "english": {
+                    "hascontent": true,
+                    "displaysince": "2.0+",
+                    "langcode": "en",
+                    "displaydate": "2006-02-06 09:28 UTC",
+                    "userinfo": "Martin Dougiamas <martin@moodle.com>",
+                    "commitmsg": "New base version of English in Unicode format",
+                    "commitsource": "git",
+                    "hascommithash": true,
+                    "commiturl": "https://github.com/moodle/moodle/commit/49aafb90bd6b08e4ad24b7d305c2e07595315d32",
+                    "commithash": "49aafb90bd6b08e4ad24b7d305c2e07595315d32",
+                    "displaytext": "Course"
+                }
+            }
+        ]
+    }
+}}
+
+<div class="container-fluid">
+    {{#changes}}
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                {{#english}}
+                    {{>local_amos/timeline_change}}
+                {{/english}}
+            </div>
+            <div class="col-sm-6">
+                {{#translation}}
+                    {{>local_amos/timeline_change}}
+                {{/translation}}
+            </div>
+        </div>
+    {{/changes}}
+</div>

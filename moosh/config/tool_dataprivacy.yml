@@ -1,0 +1,8 @@
+automaticdatadeletionapproval: '0'
+automaticdataexportapproval: '0'
+automaticdeletionrequests: '1'
+contactdataprotectionofficer: '0'
+privacyrequestexpiry: '604800'
+requireallenddatesforuserdeletion: '1'
+showdataretentionsummary: '1'
+version: '2022112800'

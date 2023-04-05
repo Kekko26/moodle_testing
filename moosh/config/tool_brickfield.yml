@@ -1,0 +1,5 @@
+analysistype: '0'
+batch: '1000'
+deletehistoricaldata: '1'
+perpage: '50'
+version: '2022112800'

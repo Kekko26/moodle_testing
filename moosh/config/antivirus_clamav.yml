@@ -1,0 +1,8 @@
+clamfailureonupload: tryagain
+pathtoclam: ''
+pathtounixsocket: ''
+runningmethod: commandline
+tcpsockethost: ''
+tcpsocketport: '3310'
+tries: '1'
+version: '2022112800'

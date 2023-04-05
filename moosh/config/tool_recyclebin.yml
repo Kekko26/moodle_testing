@@ -1,0 +1,6 @@
+autohide: '1'
+categorybinenable: '1'
+categorybinexpiry: '604800'
+coursebinenable: '1'
+coursebinexpiry: '604800'
+version: '2022112800'

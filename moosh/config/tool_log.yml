@@ -1,0 +1,3 @@
+enabled_stores: logstore_standard
+exportlog: '1'
+version: '2022112800'

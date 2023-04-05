@@ -1,0 +1,6 @@
+allowedtypes: both
+audiobitrate: '128000'
+audiotimelimit: '120'
+version: '2022112800'
+videobitrate: '2500000'
+videotimelimit: '120'

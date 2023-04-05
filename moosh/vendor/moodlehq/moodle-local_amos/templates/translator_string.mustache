@@ -1,0 +1,154 @@
+{{!
+    This file is part of Moodle - https://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template local_amos/translator_strings
+
+    Render a single translator string.
+
+    Classes required for JS:
+    * none
+
+    Data attributes required for JS:
+    * data-region="amostranslatoritem" - indicates a "row" in the translator - English original and a translation
+    * data-mode - mode of the translator item - "view" or "edit"
+    * data-region="amoseditor" - textarea element within the translator item
+
+    Context variables required for this template:
+    * englishsincedir - e.g. 2.0
+    * englishsincecode - e.g. 20
+    * englishsincelabel - e.g. 2.0
+    * islatestoriginal - e.g. 1
+    * islatesttranslation - e.g. 1
+    * language - e.g. cs
+    * component - e.g. moodle
+    * stringid - e.g. backupdatenew
+    * metainfo - not used yet
+    * original - raw original e.g. "Hello <b>{$a->name}</b>, how are you?"
+    * originalid - e.g. 7637
+    * originalmodified - e.g. 1161111425
+    * committable - e.g. 1
+    * translation - raw translation e.g. "Ahoj <b>{$a->name}</b>, jak se daří?"
+    * translationid - e.g. 259212
+    * timemodified - e.g. 1172691840
+    * translationsincedir - e.g. 2.0
+    * translationsincecode - e.g. 20
+    * translationsincelabel - e.g. 2.0
+    * statusclass - "translated", "staged" or "missing"
+    * outdated (bool)
+    * nocleaning (bool)
+    * app (bool)
+    * translatable (bool)
+    * displayenglishsince - e.g. "2.0+"
+    * displaycomponent - e.g. "core"
+    * displaylanguage - e.g. "Czech [cs]"
+    * hastranslationsincelabel (bool)
+    * displaytranslationsince - e.g. "2.0+"
+    * timelineurl - e.g. http://langmoodleorg/local/amos/timeline.php?component=moodle&language=cs&stringid=backupdatenew
+    * hasuntranslateurl (bool)
+    * untranslateurl - e.g. http://langmoodleorg/local/amos/untranslate.php?component=moodle&language=cs&stringid=backupdatenew&since=20
+    * displayoriginal (string)
+    * displaytranslation (string)
+
+    Example context (json):
+    {
+        "translatable": true,
+        "outdated": true,
+        "component": "moodle",
+        "stringid": "course",
+        "originalid": 3005,
+        "translationid": "",
+        "nocleaning": false,
+        "displayenglishsince": "2.0+",
+        "islatestoriginal": true,
+        "stringid": "course",
+        "displaycomponent": "core",
+        "isappstring": true,
+        "isworkplacestring": true,
+        "displayoriginal": "Course",
+        "hastranslationsincelabel": true,
+        "displaytranslationsince": "2.0+",
+        "displaylanguage": "Czech [cs]",
+        "committable": true,
+        "islatesttranslation": true,
+        "hasuntranslateurl": true,
+        "untranslateurl": "",
+        "timelineurl": "",
+        "displaytranslation": "Kurz"
+    }
+}}
+
+<div class="amostranslatoritem {{statusclass}} {{#translatable}} translatable {{/translatable}} {{^translatable}} nontranslatable {{/translatable}} {{#outdated}} outdated {{/outdated}}"
+     data-region="amostranslatoritem"
+     data-mode="view"
+     data-component="{{component}}"
+     data-stringid="{{stringid}}"
+     data-language="{{language}}"
+     data-originalid="{{originalid}}"
+     data-translationid="{{translationid}}"
+     data-nocleaning="{{nocleaning}}"
+    >
+    <div class="row mb-2">
+        <div class="col-md d-flex flex-column">
+            <div class="amosinfo small text-muted">
+                {{displayenglishsince}}
+                {{^islatestoriginal}}
+                    | <i class="fa fa-warning text-warning"></i> {{#str}} stringversionnotlatest, local_amos {{/str}}
+                {{/islatestoriginal}}
+                | {{stringid}} | {{displaycomponent}}
+                {{#isappstring}}
+                    | <i class="fa fa-mobile" title="{{app}}"></i>
+                {{/isappstring}}
+                {{#isworkplacestring}}
+                    | <i class="fa fa-briefcase" title="{{workplace}}"></i>
+                {{/isworkplacestring}}
+            </div>
+            <div class="amosoriginal">{{{displayoriginal}}}</div>
+        </div>
+
+        <div class="col-md d-flex flex-column">
+            <div class="amosinfo small text-muted">
+                <span data-region="displaytranslationsince">
+                    {{#hastranslationsincelabel}}
+                        {{displaytranslationsince}} |
+                    {{/hastranslationsincelabel}}
+                </span>
+                {{displaylanguage}}
+                {{#committable}}
+                    <span class="mx-1" title="{{#str}} committable, local_amos {{/str}}"><i class="fa fa-floppy-o" aria-hidden="true"></i></span>
+                {{/committable}}
+                {{^islatesttranslation}}
+                    | <i class="fa fa-warning text-warning"></i> {{#str}} stringversionnotlatest, local_amos {{/str}}
+                {{/islatesttranslation}}
+                {{#hasuntranslateurl}}
+                    | <a href="{{untranslateurl}}">{{#str}} untranslate, local_amos {{/str}}</a>
+                {{/hasuntranslateurl}}
+                | <a data-region="timelinelink" href="{{timelineurl}}" target="_blank">{{#str}} stringhistory, local_amos {{/str}}</a>
+                {{#committable}}
+                    {{#outdated}}
+                        | <a data-region="markuptodatelink" href="#">{{#str}} markuptodatelabel, local_amos {{/str}}</a>
+                    {{/outdated}}
+                {{/committable}}
+            </div>
+            <div class="amostranslation">
+                <div class="amostranslationview" data-region="amostranslationview">{{{displaytranslation}}}</div>
+                <div class="amostranslationedit">
+                    <textarea maxlength="13200" autocomplete="off" data-region="amoseditor" data-previous="{{translation}}">{{translation}}</textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

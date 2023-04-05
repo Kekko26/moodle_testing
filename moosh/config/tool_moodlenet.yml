@@ -1,0 +1,4 @@
+defaultmoodlenet: 'https://moodle.net'
+defaultmoodlenetname: 'MoodleNet Central'
+enablemoodlenet: '1'
+version: '2022112800'
