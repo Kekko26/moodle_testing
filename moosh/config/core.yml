@@ -568,14 +568,14 @@ messageinbound_hostuser: ''
 messageinbound_hostpass: ''
 mobilecssurl: ''
 enablemobilewebservice: '0'
-timezone: Europe/Berlin
+timezone: Australia/Darwin
 registerauth: ''
 supportemail: fp.acciarino@almaviva.it
 noreplyaddress: fp.acciarino@almaviva.it
 dbtype: mariadb
 dblibrary: native
 dbhost: localhost
-dbname: luigi
+dbname: moodle_testing
 dbuser: root
 dbpass: ''
 prefix: mdl_
