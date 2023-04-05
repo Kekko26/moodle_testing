@@ -1,0 +1,6 @@
+excluded_exceptions: none
+quizattemptsaction: remain
+suspenduser: '1'
+transactions_only: '1'
+uniquekeynewidtomaintain: '1'
+version: '2023040401'
