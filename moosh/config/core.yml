@@ -575,7 +575,7 @@ noreplyaddress: fp.acciarino@almaviva.it
 dbtype: mariadb
 dblibrary: native
 dbhost: localhost
-dbname: moodle_testing
+dbname: luigi
 dbuser: root
 dbpass: ''
 prefix: mdl_
