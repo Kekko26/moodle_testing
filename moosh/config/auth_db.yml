@@ -1,8 +1,6 @@
 changepasswordurl: ''
 debugauthdb: '0'
 extencoding: utf-8
-fieldpass: ''
-fielduser: ''
 field_lock_address: unlocked
 field_lock_alternatename: unlocked
 field_lock_city: unlocked
@@ -71,6 +69,8 @@ field_updateremote_lastnamephonetic: '0'
 field_updateremote_middlename: '0'
 field_updateremote_phone1: '0'
 field_updateremote_phone2: '0'
+fieldpass: ''
+fielduser: ''
 host: 127.0.0.1
 name: ''
 pass: ''

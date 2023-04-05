@@ -1,5 +1,5 @@
 alt_login: 'off'
-auth_instructions: 'Use the <a href="http://localhost/moodle_testing/auth/shibboleth/index.php">Shibboleth login</a> to get access via Shibboleth, if your institution supports it. Otherwise, use the normal login form shown here.'
+auth_instructions: 'Utilizzare <a href="http://localhost/moodle_testing/auth/shibboleth/index.php">Shibboleth login</a> per avere accesso tramite Shibboleth, se l''organizzazione lo supporta<br />Altrimenti, utilizzare il modulo di login standard visualizzato.'
 auth_logo: ''
 changepasswordurl: ''
 convert_data: ''
