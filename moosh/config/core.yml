@@ -568,7 +568,7 @@ messageinbound_hostuser: ''
 messageinbound_hostpass: ''
 mobilecssurl: ''
 enablemobilewebservice: '0'
-timezone: Europe/Berlin
+timezone: Australia/Darwin
 registerauth: ''
 supportemail: noreply@localhost.it
 noreplyaddress: noreply@localhost.it
